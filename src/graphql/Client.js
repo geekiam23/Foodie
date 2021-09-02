@@ -14,7 +14,7 @@ const restLink = new RestLink({
 });
 
 const recipeLink = new createHttpLink({
-  uri: Config.API_URL,
+  uri: Config.GRAPHQL_API_URL,
 });
 
 export const client = new ApolloClient({
