@@ -12,7 +12,7 @@ const App: FC = () => {
   const HomeStack = () => (
     <>
       <Stack.Screen
-        name="Home"
+        name="HomeScreen"
         component={HomeScreen}
         options={{
           title: 'My Recipes',
@@ -27,6 +27,11 @@ const App: FC = () => {
           },
           headerRight: () => <HeaderIcons />,
         }}
+      />
+      <Stack.Screen
+        name="RecipeScreen"
+        component={RecipeScreen}
+        options={({route}) => ({title: route?.params?.recipe.title})}
       />
   );
 };
