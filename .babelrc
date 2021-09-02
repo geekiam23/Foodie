@@ -1,0 +1,27 @@
+{
+	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": [
+					"./src/"
+				],
+				"alias": {
+					"components": "./src/components",
+					"contexts": "./src/contexts",
+					"screens": "./src/screens",
+					"graphql": "./src/graphql",
+					"assets": "./src/assets",
+					"types": "./src/types"
+				},
+				"extensions": [
+					".js",
+					".jsx",
+					".tsx",
+					".ios.js",
+					".android.js"
+				]
+			}
+		]
+	]
+}
