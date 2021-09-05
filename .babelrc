@@ -10,7 +10,6 @@
 					"components": "./src/components",
 					"contexts": "./src/contexts",
 					"screens": "./src/screens",
-					"graphql": "./src/graphql",
 					"assets": "./src/assets",
 					"types": "./src/types"
 				},
