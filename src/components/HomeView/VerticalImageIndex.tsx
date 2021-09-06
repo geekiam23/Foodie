@@ -27,13 +27,16 @@ const VerticalImageIndex: FC<Props> = ({recipe}) => {
   return (
     <View style={styles.container} key={recipe?.id} testID="recipes">
       <StatusBar barStyle="light-content" />
-      <TouchableOpacity style={styles.recipeContainer} onPress={onImagePress}>
+      <TouchableOpacity
+        testID={`${recipe.title}-btn`}
+        style={styles.recipeContainer}
+        onPress={onImagePress}>
         <Image
           style={styles.image}
           source={{uri: Config.API_URL + recipe?.imageUrl}}
         />
 
-        <ImageToolbar recipe={recipe} fullScreen={false} />
+        <ImageToolbar recipe={recipe} />
       </TouchableOpacity>
     </View>
   );

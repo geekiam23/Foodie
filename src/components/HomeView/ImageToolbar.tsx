@@ -7,20 +7,11 @@ import {Colors, Sizing, Typography} from '../../styles';
 
 type Props = {
   recipe: Recipe;
-  fullScreen?: boolean;
 };
 
-const ImageToolbar: FC<Props> = ({recipe, fullScreen}) => {
+const ImageToolbar: FC<Props> = ({recipe}) => {
   return (
-    <View
-      style={
-        fullScreen
-          ? {
-              ...styles.bottomToolbar,
-              ...styles.bottomToolbarFullSize,
-            }
-          : styles.bottomToolbar
-      }>
+    <View style={styles.bottomToolbar}>
       <View style={styles.recipeTitleContainer}>
         <Text style={styles.recipeTitle}>{recipe?.title}</Text>
       </View>

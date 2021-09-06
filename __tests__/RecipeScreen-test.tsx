@@ -2,8 +2,8 @@ import 'react-native';
 import React from 'react';
 
 import RecipeScreen from 'screens/RecipeScreen';
-import recipeFactory from './utils/factories/recipe';
-import {renderWithWrapper} from './utils/renderHelper';
+import recipeFactory from '../src/lib/testing/factories/recipe';
+import {renderWithWrapper} from '../src/lib/testing/renderHelper';
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
