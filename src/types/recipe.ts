@@ -1,42 +1,18 @@
 export interface Recipe {
-  vegetarian: boolean;
-  vegan: boolean;
-  glutenFree: boolean;
-  dairyFree: boolean;
-  veryHealthy: boolean;
-  cheap: boolean;
-  veryPopular: boolean;
-  sustainable: boolean;
-  weightWatcherSmartPoints: number;
-  gaps: string;
-  lowFodmap: boolean;
-  aggregateLikes: number;
-  spoonacularScore: number;
-  healthScore: number;
-  creditsText: string;
-  license: string;
-  sourceName: string;
-  pricePerServing: number;
-  extendedIngredients: ExtendedIngredient[];
-  id: number;
+  id: string | number;
   title: string;
-  readyInMinutes: number;
+  summary?: string;
   servings: number;
-  sourceUrl: string;
-  image: string;
   imageUrl?: string;
-  imageType: string;
-  nutrition: Nutrition;
-  summary: string;
-  cuisines: string[];
-  dishTypes: string[];
-  diets: string[];
-  occasions: string[];
-  winePairing: WinePairing;
-  instructions: string;
-  analyzedInstructions: AnalyzedInstruction[];
-  originalId: null;
-  spoonacularSourceUrl: string;
+  cuisines?: Tag[];
+  occasions?: Tag[];
+  diets?: Tag[];
+  dishTypes?: Tag[];
+}
+
+export interface Tag {
+  name: string;
+  __typename: string;
 }
 
 export interface AnalyzedInstruction {
