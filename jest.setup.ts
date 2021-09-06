@@ -5,7 +5,6 @@ import '@testing-library/react-native';
 import 'unfetch/polyfill';
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
-jest.mock('apollo-client');
 
 jest.mock('react-native-reanimated', () => {
   const Reanimated = require('react-native-reanimated/mock');
