@@ -11,6 +11,7 @@ import Config from 'react-native-config';
 
 import ImageToolbar from './ImageToolbar';
 import {Recipe} from 'types/recipe';
+import {Outlines, Sizing} from '../../styles';
 
 type Props = {
   recipe: Recipe;
@@ -42,8 +43,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     display: 'flex',
-    marginBottom: 14,
-    paddingTop: 10,
+    marginBottom: Sizing.layout.x15,
+    paddingTop: Sizing.layout.x10,
   },
   recipeContainer: {
     width: '100%',
@@ -51,8 +52,8 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '90%',
-    height: 196,
-    borderRadius: 4,
+    height: Sizing.images.base,
+    borderRadius: Outlines.borderRadius.small,
   },
 });
 

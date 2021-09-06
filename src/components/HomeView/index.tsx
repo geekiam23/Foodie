@@ -3,13 +3,18 @@ import {FlatList, StatusBar, StyleSheet} from 'react-native';
 
 import VerticalImageIndex from './VerticalImageIndex';
 import {Recipe} from 'types/recipe';
+import {Colors} from '../../styles';
 
 type Props = {
   recipes: Recipe[];
 };
 
+type Item = {
+  item: Recipe;
+};
+
 const HomeView: FC<Props> = ({recipes}) => {
-  const renderRecipes = ({item}) => {
+  const renderRecipes: FC<Item> = ({item}) => {
     return <VerticalImageIndex recipe={item} />;
   };
 
@@ -27,7 +32,7 @@ const HomeView: FC<Props> = ({recipes}) => {
 
 const styles = StyleSheet.create({
   flatlist: {
-    backgroundColor: '#093150',
+    backgroundColor: Colors.primary.brand,
   },
 });
 

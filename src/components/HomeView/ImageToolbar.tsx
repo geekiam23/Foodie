@@ -3,6 +3,7 @@ import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 
 import Heart from 'assets/Heart';
 import {Recipe} from 'types/recipe';
+import {Colors, Sizing, Typography} from '../../styles';
 
 type Props = {
   recipe: Recipe;
@@ -10,7 +11,6 @@ type Props = {
 };
 
 const ImageToolbar: FC<Props> = ({recipe, fullScreen}) => {
-
   return (
     <View
       style={
@@ -39,26 +39,25 @@ const styles = StyleSheet.create({
     width: '90%',
     alignItems: 'center',
     flexDirection: 'row',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: Colors.transparent.darkGray,
   },
   bottomToolbarFullSize: {
     width: '100%',
     height: '10%',
-    paddingBottom: 5,
+    paddingBottom: Sizing.layout.x5,
   },
   recipeTitleContainer: {
-    fontFamily: 'Helvetica Neue',
-    fontWeight: '300',
-    fontSize: 13,
-    color: '#FFF',
-    paddingLeft: 6,
+    ...Typography.fontSize.x10,
+    ...Typography.fontWeight.bold,
+    color: Colors.neutral.white,
+    paddingLeft: Sizing.layout.x5,
     flex: 1,
   },
   recipeTitle: {
-    color: '#FFF',
+    color: Colors.neutral.white,
   },
   heartIcon: {
-    marginRight: 12,
+    marginRight: Sizing.layout.x15,
   },
 });
 
