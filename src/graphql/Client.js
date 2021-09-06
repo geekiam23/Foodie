@@ -4,6 +4,7 @@ import {ApolloLink} from 'apollo-link';
 import {createHttpLink} from 'apollo-link-http';
 import {RestLink} from 'apollo-link-rest';
 import Config from 'react-native-config';
+import fetch from 'unfetch';
 
 const restLink = new RestLink({
   uri: 'https://min-api.cryptocompare.com',
@@ -15,6 +16,7 @@ const restLink = new RestLink({
 
 const recipeLink = new createHttpLink({
   uri: Config.GRAPHQL_API_URL,
+  fetch: fetch,
 });
 
 export const client = new ApolloClient({
