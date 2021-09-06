@@ -12,7 +12,7 @@ export interface Recipe {
 
 export interface Tag {
   name: string;
-  __typename: string;
+  __typename?: string;
 }
 
 export interface AnalyzedInstruction {

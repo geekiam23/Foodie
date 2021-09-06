@@ -4,5 +4,5 @@ import {Tag} from 'types/recipe';
 
 export default Factory.define<Tag>(() => ({
   name: faker.lorem.word(),
-  __typename: faker.lorem.word(),
+  // __typename: faker.lorem.word(),
 }));
