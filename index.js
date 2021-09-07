@@ -3,20 +3,25 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-import {AppRegistry} from 'react-native';
 import {ApolloProvider} from '@apollo/react-hooks';
+import {NavigationContainer} from '@react-navigation/native';
+import {AppRegistry} from 'react-native';
 
+import {client} from './src/graphql/Client';
 import App from './App';
 import {name as appName} from './app.json';
-import {NavigationContainer} from '@react-navigation/native';
-import {client} from './src/graphql/Client';
+import {AuthProvider} from 'context/auth';
 
-const AppProviders = () => (
-  <ApolloProvider client={client}>
-    <NavigationContainer>
-      <App />
-    </NavigationContainer>
-  </ApolloProvider>
-);
+const AppProviders = () => {
+  return (
+    <ApolloProvider client={client}>
+      <AuthProvider>
+        <NavigationContainer>
+          <App />
+        </NavigationContainer>
+      </AuthProvider>
+    </ApolloProvider>
+  );
+};
 
 AppRegistry.registerComponent(appName, () => AppProviders);

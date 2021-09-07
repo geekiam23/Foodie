@@ -1,11 +1,13 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {useContext} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import HomeScreen from 'screens/HomeScreen';
 import RecipeScreen from 'screens/RecipeScreen';
 
 import HeaderIcons from 'components/common/HeaderIcons';
+import LoginScreen from 'screens/LoginScreen';
+import {AuthContext} from 'context/auth';
 
 const Stack = createStackNavigator();
 
@@ -36,8 +38,24 @@ const HomeStack = () => (
   </>
 );
 
+const AuthStack = () => (
+  <>
+    <Stack.Screen
+      name="Login"
+      component={LoginScreen}
+      options={{headerShown: false}}
+    />
+  </>
+);
+
 const App = () => {
-  return <Stack.Navigator>{HomeStack()}</Stack.Navigator>;
+  const {userInfo} = useContext(AuthContext);
+
+  return (
+    <Stack.Navigator>
+      {userInfo?.id ? HomeStack() : AuthStack()}
+    </Stack.Navigator>
+  );
 };
 
 export default App;

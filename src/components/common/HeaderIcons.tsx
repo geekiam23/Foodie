@@ -1,17 +1,14 @@
-// import React, {useContext} from 'react';
-// import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useContext} from 'react';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
-// import {AuthContext} from 'lib/context/AuthContext/AuthContextProvider';
 import Star from 'assets/Star';
 import Profile from 'assets/Profile';
 import Dice from 'assets/Dice';
+import {AuthContext} from '../../context/auth';
 
 const HeaderIcons = () => {
-  const navigation = useNavigation();
-  // const {signOut} = useContext(AuthContext);
+  const {signOut} = useContext(AuthContext);
   const route = useRoute();
   const isHome = route.name === 'Home';
 
@@ -25,9 +22,9 @@ const HeaderIcons = () => {
       {/* <TouchableOpacity style={styles.heartContainer} onPress={onHeartPress}> */}
       {isHome ? <Dice /> : <Star />}
       {/* </TouchableOpacity> */}
-      {/* <TouchableOpacity onPress={signOut}> */}
-      <Profile />
-      {/* </TouchableOpacity> */}
+      <TouchableOpacity onPress={signOut}>
+        <Profile />
+      </TouchableOpacity>
     </View>
   );
 };
