@@ -13,6 +13,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {AuthContext} from '../context/auth';
 import {RootStackParamList} from 'types';
 import image from '../assets/login_bg.jpg';
+import {Colors, Outlines, Sizing, Typography} from '../styles';
 
 type LoginScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -106,19 +107,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   footerLink: {
-    fontWeight: 'bold',
-    color: 'black',
-    marginLeft: 5,
+    ...Typography.fontWeight.bold,
+    color: Colors.neutral.black,
+    marginLeft: Sizing.layout.x5,
     textDecorationLine: 'underline',
   },
   footerText: {
-    color: 'black',
+    color: Colors.neutral.black,
   },
   header: {
-    fontFamily: 'Helvetica Neue',
-    fontWeight: 'bold',
-    fontSize: 36,
-    color: 'black',
+    ...Typography.fontWeight.bold,
+    ...Typography.monospace.base,
+    ...Typography.fontSize.x60,
+    color: Colors.neutral.black,
   },
   inputSection: {
     width: '90%',
@@ -127,30 +128,30 @@ const styles = StyleSheet.create({
     flexBasis: '20%',
   },
   inputContainer: {
-    color: 'black',
-    borderBottomColor: 'black',
-    borderBottomWidth: 4,
+    color: Colors.neutral.black,
+    borderBottomColor: Colors.neutral.black,
+    borderBottomWidth: Outlines.borderWidth.thick,
     width: '80%',
     flex: 1,
   },
   input: {
+    ...Typography.fontSize.x50,
+    ...Typography.fontWeight.bold,
     flex: 1,
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: 'black',
+    color: Colors.neutral.black,
   },
   loginBtnText: {
-    fontWeight: 'bold',
-    color: 'white',
-    fontSize: 22,
+    ...Typography.fontSize.x50,
+    ...Typography.fontWeight.bold,
+    color: Colors.neutral.white,
     textAlign: 'center',
   },
   loginBtn: {
     width: '60%',
-    borderRadius: 8,
-    padding: 15,
+    borderRadius: Outlines.borderRadius.base,
+    padding: Sizing.layout.x15,
     justifyContent: 'center',
-    backgroundColor: 'black',
+    backgroundColor: Colors.neutral.black,
   },
 });
 export default Login;
