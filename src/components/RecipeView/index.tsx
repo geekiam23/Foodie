@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   tagsContainer: {
     paddingVertical: Sizing.layout.x20,
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   subheaderText: {
     ...Typography.subheader.x30,
