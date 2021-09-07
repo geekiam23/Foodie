@@ -32,9 +32,9 @@ const Login: FC<Props> = ({navigation}) => {
     signIn({email, password});
   };
 
-  // const onFooterLinkPress = () => {
-  //   navigation.navigate('Registration');
-  // };
+  const onFooterLinkPress = () => {
+    navigation.navigate('Registration');
+  };
 
   return (
     <View style={styles.container}>

@@ -48,17 +48,10 @@ export const AuthProvider = ({children}) => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    if (userToken) {
-      getUserData(userToken);
-    }
-  }, [userToken]);
-
   const signOut = async () => {
     if (!userToken) {
       return;
     }
-
     try {
       await axios.delete(Config.API_URL + '/users/sign_out', {
         headers: {
@@ -68,7 +61,7 @@ export const AuthProvider = ({children}) => {
       await removeValue('@authToken');
 
       setUserInfo(null);
-    } catch {
+    } catch (e) {
       e => setAuthErrors(e);
     }
   };
@@ -86,6 +79,7 @@ export const AuthProvider = ({children}) => {
 
         storeData('@authToken', token);
         setUserToken(response?.headers?.authorization);
+        setUserInfo(response.data.user);
       })
       .catch(e => setAuthErrors(e));
   };
